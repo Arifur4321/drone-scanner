@@ -70,7 +70,7 @@ Future<AircraftAction?> displayAircraftActionMenu(BuildContext context) async {
         value: AircraftAction.arifursave,
 
         child: Text(
-          'Arifur save data ',
+          'save data in DB and Blockchain ',
           style: labelStyle,
         ),
       ),
@@ -153,7 +153,7 @@ void handleAction(BuildContext context, AircraftAction action) {
           print('value of dronedata: , $context');
           //if (value.isNotEmpty) {
 
-            showSnackBar(context, 'Arifur data stored');
+            showSnackBar(context, 'data stored');
             print(context) ;
           //}
         },

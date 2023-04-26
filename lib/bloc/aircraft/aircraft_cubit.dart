@@ -314,10 +314,13 @@ class AircraftCubit extends Cubit<AircraftState> {
       ));
       var results = await conn.query('SELECT * FROM informationdrone');
       print('results of maria db:,  $results');
-
+      var now = new DateTime.now();
+      var formatter = new DateFormat('yyyy-MM-dd');
+      String formattedDateh = formatter.format(now);
+      print(formattedDateh); // 2016-01-25
       // Prepare the insert statement
-      final sql = 'INSERT INTO informationdrone (macaddress, Lat, Lon, Altitude, height) VALUES (?, ?, ?, ?, ?)';
-      final values = ['$mac','$Lat', '$Lon', '$altitude',  '$height'];
+      final sql = 'INSERT INTO informationdrone (macaddress, Lat, Lon, Altitude, height,dateandtime) VALUES (?, ?, ?, ?, ?,?)';
+      final values = ['$mac','$Lat', '$Lon', '$altitude',  '$height','$formattedDateh'];
 
       // Execute the insert statement with the desired values
       await conn.query(sql, values);
@@ -375,6 +378,8 @@ class AircraftCubit extends Cubit<AircraftState> {
       },
       body: data,
     );
+
+    print ('Arifur all response, $response' );
     print('Arifur response.body : , $response.body');
     print('Arifur response.statusCode : , $response.statusCode');
   }

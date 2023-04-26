@@ -1,4 +1,4 @@
-name: drone_scanner
+name: dhitech_drone_scanner
 description: >
   Multi-platform mobile application for receiving Remote ID information
   broadcasted by nearby UAVs, compatible with ASTM F3411, ASD-STAN prEN
