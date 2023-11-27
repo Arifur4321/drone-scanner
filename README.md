@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/icon.png" width="96" />
+  <img src="assets/images/arturoimg.jpeg" width="96" />
 </p>
 <h1 align="center">Drone Scanner</h1>
 

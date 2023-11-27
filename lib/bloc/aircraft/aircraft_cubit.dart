@@ -307,7 +307,7 @@ class AircraftCubit extends Cubit<AircraftState> {
       // code that may throw an exception, such as accessing an undefined variable
       final conn = await MySqlConnection.connect(ConnectionSettings(
         host: '192.168.54.206',
-        port: 3307,
+        port: 3306,
         user: 'root',
         password: '1234',
         db: 'dronescanner',
@@ -319,7 +319,7 @@ class AircraftCubit extends Cubit<AircraftState> {
       String formattedDateh = formatter.format(now);
       print(formattedDateh); // 2016-01-25
       // Prepare the insert statement
-      final sql = 'INSERT INTO informationdrone (macaddress, Lat, Lon, Altitude, height,dateandtime) VALUES (?, ?, ?, ?, ?,?)';
+      final sql = 'INSERT INTO informationdrone (MacAddress,Latitude,Longitude, Altitude, Height, dateandtime) VALUES (?, ?, ?, ?, ?,?)';
       final values = ['$mac','$Lat', '$Lon', '$altitude',  '$height','$formattedDateh'];
 
       // Execute the insert statement with the desired values
